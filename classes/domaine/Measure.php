@@ -7,8 +7,8 @@ class Measure
     public $Humidite;
     
     public function __construct($Temperature, $Humidite){
-        $this->Temperature = $UserID;
-        $this->Humidite = $Nom;  
+        $this->Temperature = $Temperature;
+        $this->Humidite = $Humidite;  
     }
 }
 
