@@ -3,12 +3,14 @@ namespace domaine;
 
 class Measure
 {
-    public $Temperature;
-    public $Humidite;
+    public $temperature;
+    public $humidite;
     
-    public function __construct($Temperature, $Humidite){
-        $this->Temperature = $Temperature;
-        $this->Humidite = $Humidite;  
+    public function __construct($ID, $temperature, $humidite){
+        $this->ID = $ID;
+        $this->temperature = $temperature;
+        $this->humidite = $humidite;  
+        
     }
 }
 
