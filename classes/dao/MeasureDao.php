@@ -15,7 +15,7 @@ class MeasureDao extends DaoBase {
 
         $result = [];
 
-        $reponse = $this->bdd->query("SELECT ID, temperature, humidite FROM user order by ID");
+        $reponse = $this->bdd->query("SELECT ID, temperature, humidite FROM Relevee order by ID");
 
         while ($donnees = $reponse->fetch()) {
 
@@ -23,9 +23,9 @@ class MeasureDao extends DaoBase {
             $temperature = $donnees["temperature"];
             $humidite = $donnees["humidite"];
 
-            $user = new Measure($ID,$temperature, $humidite);
+            $measure = new Measure($ID,$temperature, $humidite);
 
-            $result[] = $user;
+            $result[] = $measure;
         }
 
         return $result;
@@ -35,7 +35,7 @@ class MeasureDao extends DaoBase {
 
         $result;
 
-        $query = $this->bdd->prepare("SELECT ID, temperature, humidite FROM measure where ID = :ID");
+        $query = $this->bdd->prepare("SELECT ID, temperature, humidite FROM Relevee where ID = :ID");
 
         $query->bindParam(":ID", $ID);
 
@@ -45,48 +45,48 @@ class MeasureDao extends DaoBase {
 
               $ID = $donnees["ID"];
               $temperature = $donnees["temperature"];
-              $humidite = $donnees["humidite"]
+              $humidite = $donnees["humidite"];
 
-              $result = new Measure($ID,$temperature, $humidite);
+              $result = new Measure($ID, $temperature, $humidite);
             }
         }
 
         return $result;
     }
 
-    public function insertMeasure($user) {
+    public function insertMeasure($measure) {
 
         $result;
 
-        $query = $this->bdd->prepare("INSERT INTO Measure (Login, Mdp, Email) VALUES (:temperature, :humidite)");
+        $query = $this->bdd->prepare("INSERT INTO Relevee (temperature, humidite) VALUES (:temperature, :humidite)");
 
-        $query->bindParam(":temperature", $Measure->temperature);
+        $query->bindParam(":temperature", $measure->temperature);
 
-        $query->bindParam(":humidite", $Measure->humidite);
+        $query->bindParam(":humidite", $measure->humidite);
 
         $query->execute();
 
         $id = $this->bdd->lastInsertId();
 
-        $Measure->ID = $ID;
+        $measure->ID = $id;
 
-        return $ID;
+        return $id;
     }
 
     public function deleteMeasure($ID) {
 
-        $query = $this->bdd->prepare("DELETE FROM Measure WHERE ID = :ID");
+        $query = $this->bdd->prepare("DELETE FROM Relevee WHERE ID = :ID");
 
         $query->bindParam(":ID", $ID);
 
         $query->execute();
     }
 
-    public function updateMeasure($user) {
+    public function updateMeasure($measure) {
 
         $result;
 
-        $query = $this->bdd->prepare("UPDATE Measure SET temperature = :temperature, humidite = :humidite WHERE ID = :ID");
+        $query = $this->bdd->prepare("UPDATE Relevee SET temperature = :temperature, humidite = :humidite WHERE ID = :ID");
 
         $query->bindParam(":temperature", $Measure->temperature);
 
