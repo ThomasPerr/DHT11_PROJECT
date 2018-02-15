@@ -54,9 +54,9 @@ else if (!empty($_POST)) {
     </head>
     <body>
 
-    	<h1>Update User</h1>
+    	<h1>Update Relevee</h1>
 
-    	<form method="post" action="editUser.php">
+    	<form method="post" action="editRelevee.php">
     		<input type="hidden" name="ID" value="<?php echo $ID; ?>" />
         	<div class="form-group">
             	<label for="temperature">temperature *</label>

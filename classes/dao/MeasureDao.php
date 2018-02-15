@@ -11,7 +11,7 @@ class MeasureDao extends DaoBase {
         parent::__construct($config);
     }
 
-    public function findAllMeasure() {
+    public function findAllMeasures() {
 
         $result = [];
 

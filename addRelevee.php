@@ -45,7 +45,7 @@ if (!empty($_POST)) {
 
     	<h1>Creation Relevee</h1>
 
-    	<form method="post" action="addUser.php">
+    	<form method="post" action="addRelevee.php">
         	<div class="form-group">
             	<label for="temperature">temperature *</label>
             	<input type="text" class="form-control standardWidth" id="temperature" name="temperature" value="<?php echo $temperature;  ?>">
