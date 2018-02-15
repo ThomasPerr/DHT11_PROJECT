@@ -25,7 +25,7 @@ $measures = $measureDao->findAllMeasures();
     	<br />
 		<div>
         	<a href="addRelevee.php" class="btn black-background text-white">
-    			<span class="glyphicon glyphicon-plus text-white"></span> Add user
+    			<span class="glyphicon glyphicon-plus text-white"></span> Ajouter un relevee
   			</a>
         </div>
 		<br />
@@ -45,12 +45,12 @@ $measures = $measureDao->findAllMeasures();
                 foreach ($measures as $measure) {
 ?>
 	  			<tr>
-	  				<th scope="row"><?php echo $user->ID ?></th>
+	  				<th scope="row"><?php echo $measure->ID ?></th>
 	  				<td><?php echo $measure->temperature ?></td>
 	  				<td><?php echo $measure->humidite ?></td>
 
 	  				<td><a href="editRelevee.php?ID=<?php echo $measure->ID ?>"><span class="glyphicon glyphicon-pencil text-black"></span></a></td>
-	  				<td><a href="deleteRelevee.php?ID=<?php echo $Measure->ID ?>"><span class="glyphicon glyphicon-trash text-black"></span></a></td>
+	  				<td><a href="deleteRelevee.php?ID=<?php echo $measure->ID ?>"><span class="glyphicon glyphicon-trash text-black"></span></a></td>
 	  			</tr>
 <?php
                 }

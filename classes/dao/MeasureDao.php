@@ -15,7 +15,7 @@ class MeasureDao extends DaoBase {
 
         $result = [];
 
-        $reponse = $this->bdd->query("SELECT ID, temperature, humidite FROM Relevee order by ID");
+        $reponse = $this->bdd->query("SELECT ID, temperature, humidite FROM Relevees order by ID");
 
         while ($donnees = $reponse->fetch()) {
 
@@ -35,7 +35,7 @@ class MeasureDao extends DaoBase {
 
         $result;
 
-        $query = $this->bdd->prepare("SELECT ID, temperature, humidite FROM Relevee where ID = :ID");
+        $query = $this->bdd->prepare("SELECT ID, temperature, humidite FROM Relevees where ID = :ID");
 
         $query->bindParam(":ID", $ID);
 
@@ -58,7 +58,7 @@ class MeasureDao extends DaoBase {
 
         $result;
 
-        $query = $this->bdd->prepare("INSERT INTO Relevee (temperature, humidite) VALUES (:temperature, :humidite)");
+        $query = $this->bdd->prepare("INSERT INTO Relevees (temperature, humidite) VALUES (:temperature, :humidite)");
 
         $query->bindParam(":temperature", $measure->temperature);
 
@@ -75,7 +75,7 @@ class MeasureDao extends DaoBase {
 
     public function deleteMeasure($ID) {
 
-        $query = $this->bdd->prepare("DELETE FROM Relevee WHERE ID = :ID");
+        $query = $this->bdd->prepare("DELETE FROM Relevees WHERE ID = :ID");
 
         $query->bindParam(":ID", $ID);
 
@@ -86,7 +86,7 @@ class MeasureDao extends DaoBase {
 
         $result;
 
-        $query = $this->bdd->prepare("UPDATE Relevee SET temperature = :temperature, humidite = :humidite WHERE ID = :ID");
+        $query = $this->bdd->prepare("UPDATE Relevees SET temperature = :temperature, humidite = :humidite WHERE ID = :ID");
 
         $query->bindParam(":temperature", $Measure->temperature);
 
