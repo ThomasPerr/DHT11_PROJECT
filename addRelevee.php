@@ -23,7 +23,7 @@ if (!empty($_POST)) {
 
     if (empty($validationErrors)) {
 
-        $MeasureDao->insertMeasure($measure);
+        $measureDao->insertMeasure($measure);
 
         header("Location: relevee.php");
     }

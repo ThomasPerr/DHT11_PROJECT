@@ -23,7 +23,7 @@ class MeasureDao extends DaoBase {
             $temperature = $donnees["temperature"];
             $humidite = $donnees["humidite"];
 
-            $measure = new Measure($ID,$temperature, $humidite);
+            $measure = new Measure($ID ,$temperature, $humidite);
 
             $result[] = $measure;
         }
@@ -82,17 +82,17 @@ class MeasureDao extends DaoBase {
         $query->execute();
     }
 
-    public function updateMeasure($measure) {
+    public function updateMeasure($measure, $ID) {
 
         $result;
 
         $query = $this->bdd->prepare("UPDATE Relevees SET temperature = :temperature, humidite = :humidite WHERE ID = :ID");
 
-        $query->bindParam(":temperature", $Measure->temperature);
+        $query->bindParam(":temperature", $measure->temperature);
 
-        $query->bindParam(":humidite", $Measure->humidite);
+        $query->bindParam(":humidite", $measure->humidite);
 
-        $query->bindParam(":ID", $user->ID);
+        $query->bindParam(":ID", $measure->ID);
 
         $query->execute();
     }

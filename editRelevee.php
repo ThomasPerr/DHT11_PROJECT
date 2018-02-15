@@ -19,8 +19,8 @@ if (!empty($_GET["ID"])) {
     $ID = $_GET["ID"];
 
     $measure = $measureDao->findMeasureById($ID);
-    $temperature = $user->temperature;
-    $humidite = $user->humidite;
+    $temperature = $measure->temperature;
+    $humidite = $measure->humidite;
 }
 else if (!empty($_POST)) {
 

@@ -33,7 +33,7 @@ if (!empty($_GET["ID"])) {
 
     	<br />
 		<div>
-        	<a href="users.php" class="btn black-background text-white">
+        	<a href="relevee.php" class="btn black-background text-white">
     			<span class="glyphicon glyphicon-list text-white"></span> Retour à la liste des relevees
   			</a>
         </div>
